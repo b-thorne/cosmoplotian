@@ -15,6 +15,10 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 """
+This code is taken in large part from the module :py:mod:`ligo.skymap.plot.allsky`,
+by Singer. It has been adapted for plotting of Galactic frame ``HEALPix`` maps, and
+for plotting rectangular selections in different frames.
+
 Axes subclasses for astronomical mapmaking.
 This module adds several :class:`astropy.visualization.wcsaxes.WCSAxes`
 subclasses to the Matplotlib projection registry. The projections have names of
