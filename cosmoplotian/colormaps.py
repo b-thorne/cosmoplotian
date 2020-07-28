@@ -64,6 +64,7 @@ Linear colormap
 
 """
 import matplotlib
+import matplotlib.cm
 from matplotlib.colors import LinearSegmentedColormap
 
 aitetsu = "#003A47"
