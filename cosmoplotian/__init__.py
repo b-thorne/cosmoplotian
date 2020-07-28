@@ -6,3 +6,5 @@
 from ._astropy_init import *  # noqa
 
 # ----------------------------------------------------------------------------
+from .projections import *
+from .colormaps import *
