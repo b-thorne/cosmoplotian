@@ -5,6 +5,12 @@ Plotting of images related to cosmology
     :target: http://www.astropy.org
     :alt: Powered by Astropy Badge
 
+.. image:: https://coveralls.io/repos/github/bthorne93/cosmoplotian/badge.svg?branch=master
+    :target: https://coveralls.io/github/bthorne93/cosmoplotian?branch=master
+
+.. image:: https://travis-ci.org/bthorne93/cosmoplotian.svg?branch=master
+    :target: https://travis-ci.org/bthorne93/cosmoplotian
+
 ``cosmoplotian`` provides additional projections and colormaps for the
 plotting of astronomical images.
 
