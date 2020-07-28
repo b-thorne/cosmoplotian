@@ -214,7 +214,7 @@ extlinks = {
 
 modindex_common_prefix = [package.__name__ + "."]
 
-# -- Options for intersphinx --------------------------------------------------
+""" # -- Options for intersphinx --------------------------------------------------
 
 intersphinx_mapping.update(
     {
@@ -224,9 +224,4 @@ intersphinx_mapping.update(
         "ligo-lw": ("https://docs.ligo.org/kipp.cannon/python-ligo-lw/", None),
         "gwpy": ("https://gwpy.github.io/docs/latest/", None),
     }
-)
-
-# -- Options for mermaid ------------------------------------------------------
-
-extensions += ["sphinxcontrib.mermaid"]
-
+) """

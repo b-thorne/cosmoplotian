@@ -25,15 +25,18 @@ reference frame, either celestial (ICRS) or Galactic.
 the longitude axis. If omitted, ``astro`` implies ``hours`` and ``cosmo`` implies
 degrees.
 :samp:`{projection}` may be any of the following:
+
 * ``aitoff`` for the Aitoff all-sky projection
 * ``mollweide`` for the Mollweide all-sky projection
 * ``globe`` for an orthographic projection, like the three-dimensional view of
   the Earth from a distant satellite
 * ``zoom`` for a gnomonic projection suitable for visualizing small zoomed-in
   patches
+
 Some of the projections support additional optional arguments. The ``globe``
 projections support the options ``center`` and ``rotate``. The ``zoom``
 projections support the options ``center``, ``radius``, and ``rotate``.
+
 Examples
 --------
 
@@ -197,16 +200,19 @@ class AutoScaledWCSAxes(WCSAxes):
 
     def mark_inset_axes(self, ax, *args, **kwargs):
         """Outline the footprint of another WCSAxes inside this one.
+
         Parameters
         ----------
         ax : `astropy.visualization.wcsaxes.WCSAxes`
             The other axes.
+
         Other parameters
         ----------------
         args :
             Extra arguments for `matplotlib.patches.PathPatch`
         kwargs :
             Extra keyword arguments for `matplotlib.patches.PathPatch`
+
         Returns
         -------
         patch : `matplotlib.patches.PathPatch`
@@ -218,6 +224,7 @@ class AutoScaledWCSAxes(WCSAxes):
     def connect_inset_axes(self, ax, loc, *args, **kwargs):
         """Connect a corner of another WCSAxes to the matching point inside
         this one.
+
         Parameters
         ----------
         ax : `astropy.visualization.wcsaxes.WCSAxes`
@@ -225,6 +232,7 @@ class AutoScaledWCSAxes(WCSAxes):
         loc : int, str
             Which corner to connect. For valid values, see
             `matplotlib.offsetbox.AnchoredOffsetbox`.
+
         Other parameters
         ----------------
         args :
@@ -239,6 +247,7 @@ class AutoScaledWCSAxes(WCSAxes):
 
     def compass(self, x, y, size):
         """Add a compass to indicate the north and east directions.
+
         Parameters
         ----------
         x, y : float
@@ -267,18 +276,21 @@ class AutoScaledWCSAxes(WCSAxes):
 
     def scalebar(self, *args, **kwargs):
         """Add scale bar.
+        
         Parameters
         ----------
         xy : tuple
             The axes coordinates of the scale bar.
         length : `astropy.units.Quantity`
             The length of the scale bar in angle-compatible units.
+        
         Other parameters
         ----------------
         args :
             Extra arguments for `matplotlib.patches.FancyArrowPatch`
         kwargs :
             Extra keyword arguments for `matplotlib.patches.FancyArrowPatch`
+
         Returns
         -------
         patch : `matplotlib.patches.FancyArrowPatch`
@@ -329,6 +341,7 @@ class AutoScaledWCSAxes(WCSAxes):
         **kwargs
     ):
         """Add contour levels for a HEALPix data set.
+        
         Parameters
         ----------
         data : `numpy.ndarray` or str or `~astropy.io.fits.TableHDU` or `~astropy.io.fits.BinTableHDU` or tuple
@@ -338,12 +351,14 @@ class AutoScaledWCSAxes(WCSAxes):
             understood by `reproject.reproject_from_healpix`.
         smooth : `astropy.units.Quantity`, optional
             An optional smoothing length in angle-compatible units.
+        
         Other parameters
         ----------------
         hdu_in, order, nested, field, smooth :
             Extra arguments for `reproject.reproject_from_healpix`
         kwargs :
             Extra keyword arguments for `matplotlib.axes.Axes.contour`
+        
         Returns
         -------
         countours : `matplotlib.contour.QuadContourSet`
@@ -364,6 +379,7 @@ class AutoScaledWCSAxes(WCSAxes):
         **kwargs
     ):
         """Add filled contour levels for a HEALPix data set.
+ 
         Parameters
         ----------
         data : `numpy.ndarray` or str or `~astropy.io.fits.TableHDU` or `~astropy.io.fits.BinTableHDU` or tuple
@@ -373,12 +389,14 @@ class AutoScaledWCSAxes(WCSAxes):
             understood by `reproject.reproject_from_healpix`.
         smooth : `astropy.units.Quantity`, optional
             An optional smoothing length in angle-compatible units.
+ 
         Other parameters
         ----------------
         hdu_in, order, nested, field, smooth :
             Extra arguments for `reproject.reproject_from_healpix`
         kwargs :
             Extra keyword arguments for `matplotlib.axes.Axes.contour`
+ 
         Returns
         -------
         contours : `matplotlib.contour.QuadContourSet`
@@ -399,6 +417,7 @@ class AutoScaledWCSAxes(WCSAxes):
         **kwargs
     ):
         """Add an image for a HEALPix data set.
+ 
         Parameters
         ----------
         data : `numpy.ndarray` or str or `~astropy.io.fits.TableHDU` or `~astropy.io.fits.BinTableHDU` or tuple
@@ -408,12 +427,14 @@ class AutoScaledWCSAxes(WCSAxes):
             understood by `reproject.reproject_from_healpix`.
         smooth : `astropy.units.Quantity`, optional
             An optional smoothing length in angle-compatible units.
+ 
         Other parameters
         ----------------
         hdu_in, order, nested, field, smooth :
             Extra arguments for `reproject.reproject_from_healpix`
         kwargs :
             Extra keyword arguments for `matplotlib.axes.Axes.contour`
+ 
         Returns
         -------
         image : `matplotlib.image.AxesImage`

@@ -2,7 +2,7 @@
 category = "main"
 description = "A configurable sidebar-enabled Sphinx theme"
 name = "alabaster"
-optional = true
+optional = false
 python-versions = "*"
 version = "0.7.12"
 
@@ -30,6 +30,17 @@ name = "astropy"
 optional = false
 python-versions = ">=3.6"
 version = "4.0.1.post1"
+
+[package.extras]
+docs = ["sphinx-astropy"]
+
+[[package]]
+category = "main"
+description = "BSD-licensed HEALPix for Astropy"
+name = "astropy-healpix"
+optional = false
+python-versions = ">=3.6"
+version = "0.5"
 
 [package.extras]
 docs = ["sphinx-astropy"]
@@ -72,7 +83,7 @@ tests = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.i
 category = "main"
 description = "Internationalization utilities"
 name = "babel"
-optional = true
+optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.8.0"
 
@@ -104,7 +115,7 @@ webencodings = "*"
 category = "main"
 description = "Python package for providing Mozilla's CA Bundle."
 name = "certifi"
-optional = true
+optional = false
 python-versions = "*"
 version = "2020.6.20"
 
@@ -112,7 +123,7 @@ version = "2020.6.20"
 category = "main"
 description = "Universal encoding detector for Python 2 and 3"
 name = "chardet"
-optional = true
+optional = false
 python-versions = "*"
 version = "3.0.4"
 
@@ -121,7 +132,7 @@ category = "main"
 description = "Cross-platform colored terminal text."
 marker = "sys_platform == \"win32\" or platform_system == \"Windows\""
 name = "colorama"
-optional = true
+optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 version = "0.4.3"
 
@@ -175,7 +186,7 @@ version = "0.3.1"
 category = "main"
 description = "Docutils -- Python Documentation Utilities"
 name = "docutils"
-optional = true
+optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 version = "0.16"
 
@@ -222,7 +233,7 @@ pytz = ["pytz (>=2014.1)"]
 category = "main"
 description = "Internationalized Domain Names in Applications (IDNA)"
 name = "idna"
-optional = true
+optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.10"
 
@@ -230,7 +241,7 @@ version = "2.10"
 category = "main"
 description = "Getting image size from png/jpeg/jpeg2000/gif file"
 name = "imagesize"
-optional = true
+optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "1.2.0"
 
@@ -348,7 +359,7 @@ testing = ["Django (<3.1)", "colorama", "docopt", "pytest (>=3.9.0,<5.0.0)"]
 category = "main"
 description = "A very fast and expressive template engine."
 name = "jinja2"
-optional = true
+optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 version = "2.11.2"
 
@@ -422,7 +433,7 @@ version = "1.2.0"
 category = "main"
 description = "Safely add untrusted strings to HTML/XML markup."
 name = "markupsafe"
-optional = true
+optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
 version = "1.1.1"
 
@@ -546,7 +557,7 @@ testing = ["matplotlib", "pytest", "pytest-cov"]
 category = "main"
 description = "Core utilities for Python packages"
 name = "packaging"
-optional = true
+optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "20.4"
 
@@ -679,7 +690,7 @@ version = "1.9.0"
 category = "main"
 description = "Pygments is a syntax highlighting package written in Python."
 name = "pygments"
-optional = true
+optional = false
 python-versions = ">=3.5"
 version = "2.6.1"
 
@@ -854,7 +865,7 @@ six = ">=1.5"
 category = "main"
 description = "World timezone definitions, modern and historical"
 name = "pytz"
-optional = true
+optional = false
 python-versions = "*"
 version = "2020.1"
 
@@ -877,9 +888,28 @@ version = "19.0.1"
 
 [[package]]
 category = "main"
+description = "Reproject astronomical images"
+name = "reproject"
+optional = false
+python-versions = ">=3.6"
+version = "0.7.1"
+
+[package.dependencies]
+astropy = ">=3.2"
+astropy-healpix = ">=0.2"
+numpy = ">=1.13"
+scipy = ">=1.1"
+
+[package.extras]
+docs = ["sphinx-astropy", "pytest", "pyvo", "matplotlib"]
+test = ["pytest-astropy", "pytest-arraydiff", "pytest-cov"]
+testall = ["asdf", "gwcs", "pyvo", "sunpy", "shapely"]
+
+[[package]]
+category = "main"
 description = "Python HTTP for Humans."
 name = "requests"
-optional = true
+optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 version = "2.24.0"
 
@@ -895,6 +925,17 @@ socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
 
 [[package]]
 category = "main"
+description = "SciPy: Scientific Library for Python"
+name = "scipy"
+optional = false
+python-versions = ">=3.6"
+version = "1.5.2"
+
+[package.dependencies]
+numpy = ">=1.14.5"
+
+[[package]]
+category = "main"
 description = "Python 2 and 3 compatibility utilities"
 name = "six"
 optional = false
@@ -905,7 +946,7 @@ version = "1.15.0"
 category = "main"
 description = "This package provides 26 stemmers for 25 languages generated from Snowball algorithms."
 name = "snowballstemmer"
-optional = true
+optional = false
 python-versions = "*"
 version = "2.0.0"
 
@@ -921,7 +962,7 @@ version = "2.2.2"
 category = "main"
 description = "Python documentation generator"
 name = "sphinx"
-optional = true
+optional = false
 python-versions = ">=3.5"
 version = "3.1.2"
 
@@ -948,6 +989,21 @@ sphinxcontrib-serializinghtml = "*"
 docs = ["sphinxcontrib-websupport"]
 lint = ["flake8 (>=3.5.0)", "flake8-import-order", "mypy (>=0.780)", "docutils-stubs"]
 test = ["pytest", "pytest-cov", "html5lib", "typed-ast", "cython"]
+
+[[package]]
+category = "main"
+description = "A sphinx extension that automatically documents argparse commands and options"
+name = "sphinx-argparse"
+optional = false
+python-versions = "*"
+version = "0.2.5"
+
+[package.dependencies]
+sphinx = ">=1.2.0"
+
+[package.extras]
+dev = ["pytest", "sphinx-rtd-theme"]
+markdown = ["CommonMark (>=0.5.6)"]
 
 [[package]]
 category = "main"
@@ -1005,7 +1061,7 @@ sphinx = "*"
 category = "main"
 description = "sphinxcontrib-applehelp is a sphinx extension which outputs Apple help books"
 name = "sphinxcontrib-applehelp"
-optional = true
+optional = false
 python-versions = ">=3.5"
 version = "1.0.2"
 
@@ -1017,7 +1073,7 @@ test = ["pytest"]
 category = "main"
 description = "sphinxcontrib-devhelp is a sphinx extension which outputs Devhelp document."
 name = "sphinxcontrib-devhelp"
-optional = true
+optional = false
 python-versions = ">=3.5"
 version = "1.0.2"
 
@@ -1029,7 +1085,7 @@ test = ["pytest"]
 category = "main"
 description = "sphinxcontrib-htmlhelp is a sphinx extension which renders HTML help files"
 name = "sphinxcontrib-htmlhelp"
-optional = true
+optional = false
 python-versions = ">=3.5"
 version = "1.0.3"
 
@@ -1041,7 +1097,7 @@ test = ["pytest", "html5lib"]
 category = "main"
 description = "A sphinx extension which renders display math in HTML via JavaScript"
 name = "sphinxcontrib-jsmath"
-optional = true
+optional = false
 python-versions = ">=3.5"
 version = "1.0.1"
 
@@ -1052,7 +1108,7 @@ test = ["pytest", "flake8", "mypy"]
 category = "main"
 description = "sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document."
 name = "sphinxcontrib-qthelp"
-optional = true
+optional = false
 python-versions = ">=3.5"
 version = "1.0.3"
 
@@ -1064,7 +1120,7 @@ test = ["pytest"]
 category = "main"
 description = "sphinxcontrib-serializinghtml is a sphinx extension which outputs \"serialized\" HTML files (json and pickle)."
 name = "sphinxcontrib-serializinghtml"
-optional = true
+optional = false
 python-versions = ">=3.5"
 version = "1.1.4"
 
@@ -1145,7 +1201,7 @@ test = ["pytest", "mock"]
 category = "main"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 name = "urllib3"
-optional = true
+optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
 version = "1.25.10"
 
@@ -1214,7 +1270,7 @@ docs = ["sphinx", "sphinx-astropy", "nbsphinx", "sphinx-math-dollar", "pandoc", 
 test = ["pytest", "pytest-astropy", "tox"]
 
 [metadata]
-content-hash = "bdcdf9684446aec6705df97c93c2bb5a77d1c4e45bb6b6ce155eff8f0cbba031"
+content-hash = "6f368651718e4e58a389f856e254bd367c6ca24f5cda34d4176328aa74401518"
 lock-version = "1.0"
 python-versions = "^3.6"
 
@@ -1248,6 +1304,30 @@ astropy = [
     {file = "astropy-4.0.1.post1-cp38-cp38-win32.whl", hash = "sha256:d8a8db0b69256b357ae5544bc31c4f21fad1f067d2cc3e9936c646dea5b7d908"},
     {file = "astropy-4.0.1.post1-cp38-cp38-win_amd64.whl", hash = "sha256:6a3ea22bde401bf7da1ae1174a010352ce08f900c512893e0d3a6286b1f2863d"},
     {file = "astropy-4.0.1.post1.tar.gz", hash = "sha256:5c304a6c1845ca426e7bc319412b0363fccb4928cb4ba59298acd1918eec44b5"},
+]
+astropy-healpix = [
+    {file = "astropy-healpix-0.5.tar.gz", hash = "sha256:5ae15da796a840f221fb83e25de791e827b6921bc21a365d99bc1a59c7c0cdad"},
+    {file = "astropy_healpix-0.5-cp36-cp36m-macosx_10_6_intel.whl", hash = "sha256:868226d3377096b013fa2b83a4a8badfa69dc4d7b2e31601aad47fc0621c6a2d"},
+    {file = "astropy_healpix-0.5-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:0981f1e11ee7baf7136b55b206e52121088c33b79b50770bad8e7264221eb88f"},
+    {file = "astropy_healpix-0.5-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:b3940b7b05f11defdf86db508cc97460f2bf81844fd7ea6a494007ebb5611074"},
+    {file = "astropy_healpix-0.5-cp36-cp36m-manylinux2010_i686.whl", hash = "sha256:ca9deaea12eb89e7a30f6025273bad1bd8454946b56761b491c2c6d2b7f6892c"},
+    {file = "astropy_healpix-0.5-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:361b484eec8f3589624ffe7d34d92e96b8771f112586f02174cdf71c3f0ec48c"},
+    {file = "astropy_healpix-0.5-cp36-cp36m-win32.whl", hash = "sha256:ebbec978dac28827628c7b5fa998f97f0881cc1f0d88157adf8ee88b0aa6aaaa"},
+    {file = "astropy_healpix-0.5-cp36-cp36m-win_amd64.whl", hash = "sha256:8026aed4fa8d253e899864a8afefd2aee7a65565bd3aa380943d6f5f089030ce"},
+    {file = "astropy_healpix-0.5-cp37-cp37m-macosx_10_6_intel.whl", hash = "sha256:11712962c9915d75fe7fdc17dfef03a8107035fbac4229b40c4f61083b664a64"},
+    {file = "astropy_healpix-0.5-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:730d32a08ced14a35646a973f09d87400e72d7e96a97d9a94f15d982243cf0f5"},
+    {file = "astropy_healpix-0.5-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:e87f45af199ac7885850bfb0e2fbfff5402b5028270cfe0f5781c05cbbcfb021"},
+    {file = "astropy_healpix-0.5-cp37-cp37m-manylinux2010_i686.whl", hash = "sha256:aa3e4be0272007cf97d7b000ff0d039204af4334807a6fdf7d3f1e49aff4208e"},
+    {file = "astropy_healpix-0.5-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:8e2bfa0a4e3c6d7c3128e9b6f737a281271fcd43528fafa9e1249b68a42d830c"},
+    {file = "astropy_healpix-0.5-cp37-cp37m-win32.whl", hash = "sha256:3e1783edf1d48b1dc388b07892b4b54cd5ae6a248bac7024f31a470510344bef"},
+    {file = "astropy_healpix-0.5-cp37-cp37m-win_amd64.whl", hash = "sha256:831c2c317a504d65cd66137a1da775fd6eafd473feac065710847c9121905bc3"},
+    {file = "astropy_healpix-0.5-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:75e190d3f44ff4f0c57a9797241a66413fc550c34d4ea1c4e367d2b18664f134"},
+    {file = "astropy_healpix-0.5-cp38-cp38-manylinux1_i686.whl", hash = "sha256:b1e3858d6c1e033be471c210dfe6817c8764a4b9793cee9fab280c80d6fc2fa5"},
+    {file = "astropy_healpix-0.5-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:4e8103cf720b4430b82e472d7ae5b3500f751aa0a600f864e5e07f8aed59e798"},
+    {file = "astropy_healpix-0.5-cp38-cp38-manylinux2010_i686.whl", hash = "sha256:2ee9e4d08a25219ab362896155f7fa2bec888c5f019650e5125a22dbe96c6d4a"},
+    {file = "astropy_healpix-0.5-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:4e8cc9d492c1706862133cc81cb1994c3386f2e3b2be31a8da05d998059c57d4"},
+    {file = "astropy_healpix-0.5-cp38-cp38-win32.whl", hash = "sha256:9c992fa564e7e636d0f9db5dc869dcb0d63e67e5e2efa4643792f3eaa24dd9da"},
+    {file = "astropy_healpix-0.5-cp38-cp38-win_amd64.whl", hash = "sha256:caa6daec0f5341d082f5df9ae0cb0253569f9e617bc2e60df54a739242f7beb6"},
 ]
 astropy-sphinx-theme = [
     {file = "astropy-sphinx-theme-1.1.tar.gz", hash = "sha256:ee1dafa0cf4d109455f7a0d19da4cdd608ad24d380ed2eb8090bb945a3d286f9"},
@@ -1714,9 +1794,51 @@ pyzmq = [
     {file = "pyzmq-19.0.1-pp36-pypy36_pp73-macosx_10_9_x86_64.whl", hash = "sha256:aaa8b40b676576fd7806839a5de8e6d5d1b74981e6376d862af6c117af2a3c10"},
     {file = "pyzmq-19.0.1.tar.gz", hash = "sha256:13a5638ab24d628a6ade8f794195e1a1acd573496c3b85af2f1183603b7bf5e0"},
 ]
+reproject = [
+    {file = "reproject-0.7.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:def9d0b104df78e6dac24cb33250bb13c896fc8722b4b1186594094b195b4740"},
+    {file = "reproject-0.7.1-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:8b48399c805f5886ad25bb712e57a99c69ead76b69d744c9e1937760df11f317"},
+    {file = "reproject-0.7.1-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:80f11e3c8dc2495c163dece5607ddf06e10953a89eb0a27511d73cf5bc88ab18"},
+    {file = "reproject-0.7.1-cp36-cp36m-manylinux2010_i686.whl", hash = "sha256:e156070cd58eb075f73d7d6944ac171a47516c3e663a9f1922d9b173ed0715be"},
+    {file = "reproject-0.7.1-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:ca67401eeadb2f20744235d15c450372f454ee8f3fe56cce7efae13d1b9a62d7"},
+    {file = "reproject-0.7.1-cp36-cp36m-win32.whl", hash = "sha256:d552d05d6a2fdd00213027c5f820493c7ed55149ca1ff2e95d06e6321ace50c9"},
+    {file = "reproject-0.7.1-cp36-cp36m-win_amd64.whl", hash = "sha256:58224aaeafdc8b2843f42f615d735e9a23c7a8e1020c0f4ee03ecf220f2a862f"},
+    {file = "reproject-0.7.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:f3da7679abaf4c575dbcf6e487ece717ea6d0e6c9b1cd8f1ed6d13c039fee70f"},
+    {file = "reproject-0.7.1-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:6e3aeb46b04f81fe9b4b046ba29a2718dba9b81604ae4f3c5b0e8a1895b24465"},
+    {file = "reproject-0.7.1-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:3f0b0ebb5101f38ef362e94241d516faa32e3e20914b422abf3dd13925122367"},
+    {file = "reproject-0.7.1-cp37-cp37m-manylinux2010_i686.whl", hash = "sha256:6f27f7d5f9bbbc01800a6bccc649168a6ab2d38fba89c60ee915e1e1ce301a02"},
+    {file = "reproject-0.7.1-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:6470e7c7f3788b2e7f3c622c811a89c905b6f19bea58e935e19570ee75c240c8"},
+    {file = "reproject-0.7.1-cp37-cp37m-win32.whl", hash = "sha256:43be209b76d7852d3d231ed95994a2af3673325c50fb9a4155e6502f5dc7684e"},
+    {file = "reproject-0.7.1-cp37-cp37m-win_amd64.whl", hash = "sha256:81bd89673b959fac9e207fd82a6df26c3540169a6b7e6b37603ea5714781e42b"},
+    {file = "reproject-0.7.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:0708190078fec205bf7aada2a68889f5913f2591a38c993c0526bebb89eee4f8"},
+    {file = "reproject-0.7.1-cp38-cp38-manylinux1_i686.whl", hash = "sha256:3969609bbcea470ffe4c6a6cf181b8dbb7d9b95635ca56723be5afdb3c8f8558"},
+    {file = "reproject-0.7.1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:66ae53077f60bec5d6bee63a82ec2631f9a331f4060ed2ef421cf37a8ad01580"},
+    {file = "reproject-0.7.1-cp38-cp38-manylinux2010_i686.whl", hash = "sha256:ec4071b686a6003c72cca36e93ba5c8705158b51650dccc7d78e5a8329f9ca77"},
+    {file = "reproject-0.7.1-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:0fd32ac3de80bcd48f78f6c20d6bee751fdaa464e848f3729a7f6d5a42f4f455"},
+    {file = "reproject-0.7.1-cp38-cp38-win32.whl", hash = "sha256:b32e4894c357b63643bebb1bfa3af002eb8e24552710e7bcd2b2c04bd5700007"},
+    {file = "reproject-0.7.1-cp38-cp38-win_amd64.whl", hash = "sha256:3d995fb0665058b3cd5fef7c6982b488c52597051cefb2e03ead03a285c271bd"},
+    {file = "reproject-0.7.1.tar.gz", hash = "sha256:95c0fa49e6b4e36455b91fa09ad1b71b230c990ad91d948af67ea3509a1a4ccb"},
+]
 requests = [
     {file = "requests-2.24.0-py2.py3-none-any.whl", hash = "sha256:fe75cc94a9443b9246fc7049224f75604b113c36acb93f87b80ed42c44cbb898"},
     {file = "requests-2.24.0.tar.gz", hash = "sha256:b3559a131db72c33ee969480840fff4bb6dd111de7dd27c8ee1f820f4f00231b"},
+]
+scipy = [
+    {file = "scipy-1.5.2-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:cca9fce15109a36a0a9f9cfc64f870f1c140cb235ddf27fe0328e6afb44dfed0"},
+    {file = "scipy-1.5.2-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:1c7564a4810c1cd77fcdee7fa726d7d39d4e2695ad252d7c86c3ea9d85b7fb8f"},
+    {file = "scipy-1.5.2-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:07e52b316b40a4f001667d1ad4eb5f2318738de34597bd91537851365b6c61f1"},
+    {file = "scipy-1.5.2-cp36-cp36m-win32.whl", hash = "sha256:d56b10d8ed72ec1be76bf10508446df60954f08a41c2d40778bc29a3a9ad9bce"},
+    {file = "scipy-1.5.2-cp36-cp36m-win_amd64.whl", hash = "sha256:8e28e74b97fc8d6aa0454989db3b5d36fc27e69cef39a7ee5eaf8174ca1123cb"},
+    {file = "scipy-1.5.2-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:6e86c873fe1335d88b7a4bfa09d021f27a9e753758fd75f3f92d714aa4093768"},
+    {file = "scipy-1.5.2-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:a0afbb967fd2c98efad5f4c24439a640d39463282040a88e8e928db647d8ac3d"},
+    {file = "scipy-1.5.2-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:eecf40fa87eeda53e8e11d265ff2254729d04000cd40bae648e76ff268885d66"},
+    {file = "scipy-1.5.2-cp37-cp37m-win32.whl", hash = "sha256:315aa2165aca31375f4e26c230188db192ed901761390be908c9b21d8b07df62"},
+    {file = "scipy-1.5.2-cp37-cp37m-win_amd64.whl", hash = "sha256:ec5fe57e46828d034775b00cd625c4a7b5c7d2e354c3b258d820c6c72212a6ec"},
+    {file = "scipy-1.5.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:fc98f3eac993b9bfdd392e675dfe19850cc8c7246a8fd2b42443e506344be7d9"},
+    {file = "scipy-1.5.2-cp38-cp38-manylinux1_i686.whl", hash = "sha256:a785409c0fa51764766840185a34f96a0a93527a0ff0230484d33a8ed085c8f8"},
+    {file = "scipy-1.5.2-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:0a0e9a4e58a4734c2eba917f834b25b7e3b6dc333901ce7784fd31aefbd37b2f"},
+    {file = "scipy-1.5.2-cp38-cp38-win32.whl", hash = "sha256:dac09281a0eacd59974e24525a3bc90fa39b4e95177e638a31b14db60d3fa806"},
+    {file = "scipy-1.5.2-cp38-cp38-win_amd64.whl", hash = "sha256:92eb04041d371fea828858e4fff182453c25ae3eaa8782d9b6c32b25857d23bc"},
+    {file = "scipy-1.5.2.tar.gz", hash = "sha256:066c513d90eb3fd7567a9e150828d39111ebd88d3e924cdfc9f8ce19ab6f90c9"},
 ]
 six = [
     {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},
@@ -1733,6 +1855,9 @@ sortedcontainers = [
 sphinx = [
     {file = "Sphinx-3.1.2-py3-none-any.whl", hash = "sha256:97dbf2e31fc5684bb805104b8ad34434ed70e6c588f6896991b2fdfd2bef8c00"},
     {file = "Sphinx-3.1.2.tar.gz", hash = "sha256:b9daeb9b39aa1ffefc2809b43604109825300300b987a24f45976c001ba1a8fd"},
+]
+sphinx-argparse = [
+    {file = "sphinx-argparse-0.2.5.tar.gz", hash = "sha256:60ab98f80ffd38731d62e267171388a421abbc96c74901b7785a8e058b438c17"},
 ]
 sphinx-astropy = [
     {file = "sphinx-astropy-1.3.tar.gz", hash = "sha256:2bd33bc2fb1a2a8cee4f10fd1ea6642ddfad66ab133d60f2e96dff44bfd22bc5"},

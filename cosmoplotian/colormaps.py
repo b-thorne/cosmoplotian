@@ -84,3 +84,5 @@ matplotlib.cm.register_cmap(
 # matplotlib.cm.register_cmap(name='lin blu shp', cmap=tri('shironeri', 'sabinando', 'black'))
 
 del azuki, shironeri, sabinando, ominaeshi, seiheki, koiai
+
+__all__ = []
