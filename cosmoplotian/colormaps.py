@@ -16,11 +16,12 @@
 #
 """
 Colormaps for plotting of cosmological image. This module deals with providing
-customizable colormaps implemented with :class:`matplotlib.colors.LinearSegmentedColormap`.
-The colormaps are implemented individually, rather than being able to choose
-colors 'on-the-fly', as it results in a simpler interface. Once ``cosmoplotian``
-has been implemented, the colormap names will be available thorugh the 
-``cmap`` keyword argument. 
+customizable colormaps implemented with
+:class:`matplotlib.colors.LinearSegmentedColormap`. The colormaps are
+implemented individually, rather than being able to choose colors
+'on-the-fly', as it results in a simpler interface. Once ``cosmoplotian``
+has been implemented, the colormap names will be available thorugh the
+``cmap`` keyword argument.
 
 Examples
 --------
@@ -31,7 +32,7 @@ Divergent colormap
    :context: reset
    :include-source:
    :align: center
-    
+
     import cosmoplotian
     import numpy as np
     import matplotlib.pyplot as plt
@@ -49,7 +50,7 @@ Linear colormap
    :context: reset
    :include-source:
    :align: center
-    
+
     import cosmoplotian
     import numpy as np
     import matplotlib.pyplot as plt

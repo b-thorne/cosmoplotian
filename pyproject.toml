@@ -29,6 +29,10 @@ sphinx-argparse = "^0.2.5"
 test = ["pytest", "pytest-astropy", "tox"]
 docs = ["sphinx", "sphinx-astropy", "sphinx-argparse", "nbsphinx", "sphinx-math-dollar", "pandoc", "ipykernel"]
 
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.3"
+black = "^19.10b0"
 [build-system]
 
 requires = ["setuptools",
