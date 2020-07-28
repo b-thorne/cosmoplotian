@@ -1,7 +1,7 @@
   
 [tool.poetry]
 name = "cosmoplotian"
-version = "0.0.0.dev"
+version = "0.0.1"
 description = "cosmoplotian is for plotting"
 authors = ["Ben Thorne <bn.thorne@googlemail.com>"]
 readme = "README.rst"
