@@ -1,7 +1,0 @@
-numpy
-astropy
-scipy
-matplotlib
-reproject
-pytest-astropy
-sphinx-astropy
